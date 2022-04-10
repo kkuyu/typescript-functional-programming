@@ -1,4 +1,4 @@
-import * as C from "./clip3-0";
+import * as C from "./clip3-1";
 
 const app = document.getElementById("app");
 if (app !== null) {
