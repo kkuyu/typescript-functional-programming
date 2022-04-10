@@ -2,7 +2,7 @@
 // 오렌지: 15000원
 // 사과: 10000원
 
-function getPrice(name: string): number | undefined {
+export function getPrice(name: string): number | undefined {
   if (name === "tomato") {
     return 7000;
   } else if (name === "orange") {
@@ -12,7 +12,7 @@ function getPrice(name: string): number | undefined {
   }
 }
 
-const isExpensive = (price: number | undefined) => {
+export const isExpensive = (price: number | undefined) => {
   // getPrice의 결과에 undefined가 포함 되어 있기 때문에
   // getPrice와 합성을 위해 undefined에 대한 처리 필요
   if (price === undefined) return false;
