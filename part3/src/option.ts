@@ -32,3 +32,15 @@ export const getOrElse = <A>(oa: Option<A>, defaultValue: A): A => {
   if (isNone(oa)) return defaultValue;
   return oa.value;
 };
+
+// 값이 없으면 값이 없는 상태를 유지한다.
+// 값이 있으면 값을 함수에 적용한다.
+export const map = <A, B>(oa: Option<A>, f: (a: A) => B): Option<B> => {
+  if (isNone(oa)) return oa;
+  return some(f(oa.value));
+};
+
+// map, getOrElse 합성
+export const mapOrElse = <A, B>(oa: Option<A>, f: (a: A) => B, defaultValue: B): B => {
+  return getOrElse(map(oa, f), defaultValue);
+};

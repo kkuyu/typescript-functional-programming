@@ -1,1 +1,1 @@
-import "./clip5";
+import "./clip6";
