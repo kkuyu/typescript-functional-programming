@@ -1,5 +1,5 @@
 import "./styles.css";
-import * as C from "./clip3-2";
+import * as C from "./clip5";
 
 C.main();
 
