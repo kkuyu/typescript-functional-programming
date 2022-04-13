@@ -37,4 +37,23 @@ export const main = () => {
   // map_ :: (A => B) => (Array<A> => Array<B>)
   const map_ = curry(flip(map));
   console.log(map_(isEven)(numbers));
+
+  // isEven :: number => boolean
+  // mapIsEven :: Array<number> => Array<boolean>
+  const mapIsEven = map_(isEven);
+
+  console.log(isEven(42));
+  console.log(isEven(7));
+
+  console.log(mapIsEven(numbers));
+  console.log(mapIsEven([]));
+  console.log(mapIsEven([42]));
+
+  const omap = curry(flip(O.map));
+
+  // optionIsEven :: Option<number> => Option<boolean>
+  const optionIsEven = omap(isEven);
+
+  console.log(optionIsEven(O.some(42)));
+  console.log(optionIsEven(O.none()));
 };
