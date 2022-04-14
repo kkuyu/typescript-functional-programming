@@ -50,3 +50,26 @@ export const keepSuccess = <E, R>(tas: Array<Try<E, R>>): Array<R> => {
   });
   return ret;
 };
+
+export const keepSuccessWithFor = <E, R>(tas: Array<Try<E, R>>): Array<R> => {
+  const ret: Array<R> = [];
+  for (const ta of tas) {
+    if (isSuccess(ta)) {
+      ret.push(ta.result);
+    }
+  }
+  return ret;
+};
+
+// flatMap :: (A => Array<B>) => (Array<A> => Array<B>)
+// map     :: (A => B)        => (Array<A> => Array<B>)
+
+// flat :: Try<E, Try<E, A>> => Try<E, A>
+export const flat = <E, A>(tta: Try<E, Try<E, A>>): Try<E, A> => {
+  if (isSuccess(tta)) return tta.result;
+  return tta;
+};
+
+export const flatMap = <E, A, B>(ta: Try<E, A>, f: (a: A) => Try<E, B>): Try<E, B> => {
+  return flat(map(ta, f));
+};
