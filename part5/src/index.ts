@@ -1,3 +1,3 @@
-import * as C from "./clip8-2";
+import * as C from "./clip8-3";
 
 C.main();

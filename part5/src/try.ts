@@ -41,3 +41,12 @@ export const map = <E, A, B>(ta: Try<E, A>, f: (a: A) => B): Try<E, B> => {
   if (isFailed(ta)) return ta;
   return success(f(ta.result));
 };
+
+// Array<T.Try<ParseError, ParsedItem>> => Array<ParsedItem>
+export const keepSuccess = <E, R>(tas: Array<Try<E, R>>): Array<R> => {
+  const ret = tas.flatMap((ta) => {
+    if (isSuccess(ta)) return [ta.result];
+    else return [];
+  });
+  return ret;
+};
