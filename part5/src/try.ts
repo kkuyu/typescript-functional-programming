@@ -36,3 +36,8 @@ export const getOrElse = <E, R>(ta: Try<E, R>, defaultValue: (e: E) => R): R => 
   // 결과가 성공이라면 해당 값을 사용한다.
   return ta.result;
 };
+
+export const map = <E, A, B>(ta: Try<E, A>, f: (a: A) => B): Try<E, B> => {
+  if (isFailed(ta)) return ta;
+  return success(f(ta.result));
+};
