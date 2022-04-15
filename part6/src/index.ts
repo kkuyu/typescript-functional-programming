@@ -1,7 +1,7 @@
 import "./styles.css";
 
-import * as main from "./clip3-1";
-import * as mainTry from "./clip4-1";
+import * as main from "./clip3-2";
+import * as mainTry from "./clip4-2";
 
 console.log("===== main");
 main.main();
