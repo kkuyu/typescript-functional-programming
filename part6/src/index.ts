@@ -1,12 +1,9 @@
 import "./styles.css";
 
-import * as main from "./clip3-2";
-import * as mainTry from "./clip4-2";
+import * as main from "./clip5-1";
 
 console.log("===== main");
 main.main();
-console.log("===== mainTry");
-mainTry.main();
 
 const app = document.getElementById("app");
 if (app !== null) {
