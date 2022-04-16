@@ -71,11 +71,12 @@ const greeting = (name: string) => {
 };
 
 export const main = () => {
-  const a = f("test");
-  const b = flatMap(a, (a_) => g(a_));
-  const c = flatMap(b, (b_) => h(b_));
-  const result = map(c, (c_) => program(c_));
-  run(result);
+  const a = f("test"); // 값, 계산의 서술
+  const b = flatMap(a, (a_) => g(a_)); // 값, 계산의 서술
+  const c = flatMap(b, (b_) => h(b_)); // 값, 계산의 서술
+  const result = map(c, (c_) => program(c_)); // 값, 계산의 서술
+  run(result); // 실행
+  run(result); // 실행
 
   greeting("World");
   console.log("프로그램이 종료되었습니다.");

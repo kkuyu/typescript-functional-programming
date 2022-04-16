@@ -86,6 +86,7 @@ export const main = () => {
   // const result = c.then((c_) => program(c_));
   // result.catch(handleError);
 
+  // 생성 즉시 실행, 값의 전달만 분리 됨
   f("abc").then(g).then(h).then(program).catch(handleError);
 
   greeting("World");
