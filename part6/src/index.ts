@@ -1,6 +1,6 @@
 import "./styles.css";
 
-import * as main from "./clip6-2";
+import * as main from "./clip6-3";
 
 console.log("===== main");
 main.main();
